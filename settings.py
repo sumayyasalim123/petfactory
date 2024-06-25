@@ -57,13 +57,13 @@ MIDDLEWARE = [
 CORS_ORIGIN_ALLOW_ALL = True
 
 REST_FRAMEWORK = {
-     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-      ],
-      'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny'
-    ]
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',  # If using Token authentication
+        'rest_framework_simplejwt.authentication.JWTAuthentication',  # If using JWT
+    ],
 }
+
 
 ROOT_URLCONF = 'petfactory.urls'
 
